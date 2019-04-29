@@ -6,13 +6,11 @@
 
 Discord rich presence for Blender. Tested in Blender **2.79**
 
-Credit to [k3rn31p4nic](https://github.com/k3rn31p4nic/) for the [discoIPC](https://github.com/k3rn31p4nic/discoIPC) module for Python.
-
-DiscordRPBlender is a script, not an addon (yet)!
+(Big thanks to eKross for testing DiscordRPBlender on Windows!)
 
 DiscordRPBlender supports:
 - Filename
-- Amount of objects / Idle status / Render status
+- Amount of objects / Idle status / Render status (No idle status for Windows and ?Mac? yet)
 - Render time
 - Time spent on project (not all-time just session time)
 - Changing files without turning server off
@@ -23,6 +21,9 @@ DiscordRPBlender needs:
 - Blender addon
 - Something in Blender to show the user that DiscordRPBlender is running
 - Toolbar button to toggle on/off
+- Idle status on Windows & Mac:
+  - https://stackoverflow.com/a/36419702
+- Installation package that allows input of client ID too
 
 # Images
 
@@ -34,24 +35,34 @@ This is what DiscordRPBlender looks like on Discord.
 
 ![Img3](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgRendering.png)
 
-# Installing Python 3 and PyPi
+# Installation without Python or Pip
+### Blender 2.8 installed
+That's fine! We can download 2.79 without removing Blender 2.8!
+
 ##### Linux
 
-1. `sudo apt-get install python3`
+1. Download discordrpblender.py from this repository.
 
-2. `sudo apt-get install python3-pip`
+2. Open discordrpblender.py and paste the client ID on **line 21** (replacing the template ID).
+
+3. In the terminal, run `uname -i`:
+	1. If the output is `x86` then download `Blender2.79-Linux32.zip`
+	2. If the output is `x86_64` then download `Blender2.79-Linux64.zip`
+
+5. Extract it wherever you want to keep it.
+
+6. Run it with `blender -P PATH_TO_SCRIPT/discordrpblender.py`
 
 ##### Windows
+Do exactly the same as above, but download `Blender2.79-Windows32.zip` or `Blender2.79-Windows64.zip` depending on if your PC is 32bit or 64bit. Here's how to check:
 
-https://www.python.org/downloads/windows/
-
-https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation#pip-install
-
-https://stackoverflow.com/questions/23708898/pip-is-not-recognized-as-an-internal-or-external-command
+https://www.howtogeek.com/howto/21726/how-do-i-know-if-im-running-32-bit-or-64-bit-windows-answers/
 
 ##### Mac
+???
 
-https://realpython.com/installing-python/#macos-mac-os-x
+### Blender 2.79 installed
+Even simpler!
 
 # Installation
 
@@ -91,6 +102,7 @@ If Blender is installed then run:
 Otherwise go to the directory where Blender is installed then run Blender:
 1. `cd blender_installation_directory`
 2. `blender -P PATH_TO_SCRIPT/discordrpblender.py`
+
 ##### Mac
 Open the terminal application, go to the directory where Blender is installed, and run the executable within the app bundle, with commands like this:
 1. `cd /Applications/Blender`
@@ -106,6 +118,10 @@ And that's it! You'll need to run this command every time you want Discord rich 
 If you need more information visit the manual:
 
 [Blender Manual](https://docs.blender.org/manual/en/latest/render/workflows/command_line.html)
+
+# Credits
+
+Credit to [k3rn31p4nic](https://github.com/k3rn31p4nic/) for the [discoIPC](https://github.com/k3rn31p4nic/discoIPC) module for Python.
 
 # License
 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)
