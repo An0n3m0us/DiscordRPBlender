@@ -53,9 +53,15 @@ Sit back and watch the script download Blender 2.79 and download DiscoIPC! Blend
 Now to set up `discordrpblender.py` and run it! (See chapter "Setting up discordrpblender.py" below)
 
 ##### Windows
-1. From this repository, download `Blender2.79-Windows32.zip` or `Blender2.79-Windows64.zip` depending on if your system is 32bit or 64bit. How to check:
+(Note: Need a better way than the current way of installation. Maybe a .bat script similar to the Linux script above)
+
+1. Check if your system is 32bit or 64bit. How to check:
 
 https://www.howtogeek.com/howto/21726/how-do-i-know-if-im-running-32-bit-or-64-bit-windows-answers/
+
+If it is 32bit, download: [Blender2.79-Windows32.zip](http://www.mediafire.com/file/x2pqmu8mq03szxw/Blender2.79-Windows32.zip/file)
+
+If it is 64bit, download: [Blender2.79-Windows64.zip](http://www.mediafire.com/file/5yku17tvdi1iyk2/Blender2.79-Windows64.zip/file)
 
 2. Extract to any directory you prefer.
 
