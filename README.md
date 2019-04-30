@@ -40,15 +40,15 @@ This is what DiscordRPBlender looks like on Discord.
 That's fine! We can download 2.79 without removing Blender 2.8!
 
 ##### Linux
-1. Check whether Linux is 32bit or 64bit by running `uname -i`
-	1. If the output is `x86` then download `blender-linux-x86.sh`
-	2. If the output is `x86_64` then download `blender-linux-x86_64.sh`
+1. Launch a terminal.
 
-3. Launch a terminal and go to the directory where you downloaded the file into.
+2. Check whether Linux is 32bit or 64bit by running `uname -i`
+	1. If the output is `x86`:
+		1. Copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux-x86)` into the terminal and hit the enter key.
+	2. If the output is `x86_64`:
+		1. Copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux-x86_64)` into the terminal and hit the enter key.
 
-4. Write `./blender-linux-x86.sh` or `./blender-linux-x86_64.sh` in the terminal.
-
-Sit back and watch the script download Blender 2.79 then download DiscoIPC! Blender 2.79 will be downloaded to `/tmp/blender-2.79b-linux...`. You can move the Blender folder to anywhere you like!
+Sit back and watch the script download Blender 2.79 and download DiscoIPC! Blender 2.79 will be downloaded to `/tmp/blender-2.79b-linux...`. You can move the Blender folder to anywhere you like!
 
 Now to set up `discordrpblender.py` and run it! (See chapter "Setting up discordrpblender.py" below)
 
