@@ -48,9 +48,19 @@ That's fine! We can download 2.79 without removing Blender 2.8!
 	2. If the output is `x86_64`:
 		1. Copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux-x86_64)` into the terminal and hit the enter key.
 
-Sit back and watch the script download Blender 2.79 and download DiscoIPC! Blender 2.79 will be downloaded to `/tmp/blender-2.79b-linux...`. You can move the Blender folder to anywhere you like!
+Sit back and watch the script download Blender 2.79 and download DiscoIPC! Don't do anything yet! We haven't quite finished!
 
-Now to set up `discordrpblender.py` and run it! (See chapter "Setting up discordrpblender.py" below)
+Now to set up `discordrpblender.py` and run it! First create a Discord application using the guide in the chapter "Creating a Discord Application" below, then go to step 3 in this chapter!
+
+3. Copy `sed -e "s/\${clientID}/here/" discordrpblender.txt > discordrpblender.py` into the terminal and place your client id where 'here' is shown in the command. Here's the command with a fake client ID:
+
+`sed -e "s/\${clientID}/123456789123456789/" discordrpblender.txt > discordrpblender.py`
+
+(If you haven't got sed installed, either try `sudo apt-get install sed` or refer to chapter "Setting up discordrpblender.py" below)
+
+4. Now remove the text file we just used: `rm discordrpblender.txt`
+
+And that's it! Blender 2.79 will be in `/tmp/blender-2.79b-linux...`. You can now move the Blender installation to anywhere you like! Now we can run the script with Blender. Jump to the "Running" chapter below.
 
 ##### Windows
 (Note: Need a better way than the current way of installation. Maybe a .bat script similar to the Linux script above)
@@ -80,19 +90,23 @@ TODO
 
 3. Enable game activity status on Discord.
 
+# Creating a Discord Application
+
 Now to set up a Discord application to receive Blender rich presence.
 
-4. Visit https://discordapp.com/developers/applications/
+1. Visit https://discordapp.com/developers/applications/
 
-5. Create an application called Blender.
+2. Create an application called Blender.
 
-6. Click **Rich Presence** on the side bar and then scroll down.
+3. Click **Rich Presence** on the side bar and then scroll down.
 
-7. Download the Blender logo from the "Images" folder in this repository
+4. Download the Blender logo from the "Images" folder in this repository
 
-8. Go back to the Discord application.
+5. Go back to the Discord application.
 
-9. Click **Add Image(s)** then upload the image you just downloaded.
+6. Click **Add Image(s)** then upload the image you just downloaded.
+
+7. Go back to the "General Information" tab and click the Copy button under "Client ID".
 
 # Setting up discordrpblender.py
 
@@ -112,6 +126,9 @@ If Blender is installed then run:
 Otherwise go to the directory where Blender is installed then run Blender:
 1. `cd blender_installation_directory`
 2. `blender -P PATH_TO_SCRIPT/discordrpblender.py`
+
+If the file is in the Blender installation directory, you can run:
+`blender -P discordrpblender.py`
 
 ##### Mac
 Open the terminal application, go to the directory where Blender is installed, and run the executable within the app bundle, with commands like this:

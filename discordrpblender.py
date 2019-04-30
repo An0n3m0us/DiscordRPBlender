@@ -18,7 +18,7 @@ active = 0
 rendering = 0
 rendertime = 0
 
-client = ipc.DiscordIPC('123456789123456789') # Replace the template ID with your ID
+client = ipc.DiscordIPC('${clientID}') # Replace the template ID with your ID
 client.connect()
 print('\nStarting Discord ICP ...\n')
 
