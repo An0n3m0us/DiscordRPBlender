@@ -40,33 +40,35 @@ This is what DiscordRPBlender looks like on Discord.
 That's fine! We can download 2.79 without removing Blender 2.8!
 
 ##### Linux
+1. Check whether Linux is 32bit or 64bit by running `uname -i`
+	1. If the output is `x86` then download `blender-linux-x86.sh`
+	2. If the output is `x86_64` then download `blender-linux-x86_64.sh`
 
-1. Download discordrpblender.py from this repository.
+3. Launch a terminal and go to the directory where you downloaded the file into.
 
-2. Open discordrpblender.py and paste the client ID on **line 21** (replacing the template ID).
+4. Write `./blender-linux-x86.sh` or `./blender-linux-x86_64.sh` in the terminal.
 
-3. In the terminal, run `uname -i`:
-	1. If the output is `x86` then download `Blender2.79-Linux32.zip`
-	2. If the output is `x86_64` then download `Blender2.79-Linux64.zip`
+Sit back and watch the script download Blender 2.79 then download DiscoIPC! Blender 2.79 will be downloaded to `/tmp/blender-2.79b-linux...`. You can move the Blender folder to anywhere you like!
 
-5. Extract it wherever you want to keep it.
-
-6. Run it with `blender -P PATH_TO_SCRIPT/discordrpblender.py`
+Now to set up `discordrpblender.py` and run it! (See chapter "Setting up discordrpblender.py" below)
 
 ##### Windows
-Do exactly the same as above, but download `Blender2.79-Windows32.zip` or `Blender2.79-Windows64.zip` depending on if your PC is 32bit or 64bit. Here's how to check:
+1. From this repository, download `Blender2.79-Windows32.zip` or `Blender2.79-Windows64.zip` depending on if your system is 32bit or 64bit. How to check:
 
 https://www.howtogeek.com/howto/21726/how-do-i-know-if-im-running-32-bit-or-64-bit-windows-answers/
 
+2. Extract to any directory you prefer.
+
+Now to set up `discordrpblender.py` and run it! (See chapter "Setting up discordrpblender.py" below)
 ##### Mac
-???
+TODO
 
 ### Blender 2.79 installed
-Even simpler!
+TODO
 
-# Installation
+# Installation with Python and Pip
 
-1. Install **discoIPC** by running `pip install discoIPC`.
+1. Install **discoIPC** by running `pip3 install discoIPC`.
 
 2. Download the Discord app and log in.
 
@@ -86,11 +88,13 @@ Now to set up a Discord application to receive Blender rich presence.
 
 9. Click **Add Image(s)** then upload the image you just downloaded.
 
-10. Now download discordrpblender.py from this repository.
+# Setting up discordrpblender.py
 
-11. Open discordrpblender.py and paste the client ID on **line 21** (replacing the template ID).
+Download discordrpblender.py from this repository.
 
-And that's it! Now you may place the script wherever you like. Onto running it in Blender!
+Open discordrpblender.py and paste the client ID on **line 21** (replacing the template ID).
+
+**And that's it! Now you may place the script wherever you like. Onto running it in Blender!**
 
 # Running
 ##### Linux
