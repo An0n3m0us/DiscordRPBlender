@@ -11,6 +11,7 @@ base_activity = {
     'timestamps': {},
 }
 
+pid = os.getpid()
 filename = ''
 objcount = 0
 timeElapsed = int(time.time())
@@ -74,7 +75,7 @@ def set_activity():
     global objcount
     #Loop these variables
     objcount = len(bpy.data.objects)
-    if os.system('xdotool getwindowfocus getwindowname | grep -q Blender') == 0:
+    if not os.system('xdotool getwindowfocus getwindowpid | grep -q "\<{}\>"'.format(pid)):
         if rendering == 1:
             active = 2
         else:
