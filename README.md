@@ -54,17 +54,9 @@ First we need to get the Discord App, which is available for Linux, Windows, Mac
 	2. If the output is `x86_64`:
 		1. Copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux-x86_64)` into the terminal and hit the enter key.
 
-Sit back and watch the script download Blender 2.79 and download DiscoIPC! Don't do anything yet! We haven't quite finished!
+Sit back and watch the script download Blender 2.79 and download DiscoIPC! The script will ask you for your client ID, so input/paste it into the terminal when it says so.
 
-Now to set up `discordrpblender.py`! First create a Discord application using the guide in the chapter "Creating a Discord Application" below, then continue on to step 3 in this chapter!
-
-3. Copy `sed -e "s/\${clientID}/here/" discordrpblender.txt > discordrpblender.py` into the terminal and place your client id where 'here' is shown in the command. Here's the command with a fake client ID:
-
-`sed -e "s/\${clientID}/123456789123456789/" discordrpblender.txt > discordrpblender.py`
-
-(If you haven't got `sed` installed, either try `sudo apt-get install sed` or refer to chapter "Setting up discordrpblender.py" below)
-
-4. Now remove the text file we just used: `rm discordrpblender.txt`
+Now, create a Discord application using the guide in the chapter "Creating a Discord Application" below.
 
 And that's it! Blender 2.79 will be in `/tmp/blender-2.79b-linux...`. You can now move the Blender installation to anywhere you like! Now we can run the script with Blender. Jump to the "Running" chapter below.
 
