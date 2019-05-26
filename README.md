@@ -46,13 +46,7 @@ First we need to get the Discord App, which is available for Linux, Windows, Mac
 2. Enable Game Activity status on Discord.
 
 ##### Linux
-1. Launch a terminal.
-
-2. Check whether Linux is 32bit or 64bit by running `uname -i`
-	1. If the output is `x86`:
-		1. Copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux-x86)` into the terminal and hit the enter key.
-	2. If the output is `x86_64`:
-		1. Copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux-x86_64)` into the terminal and hit the enter key.
+Launch a terminal then copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux)` into the terminal and hit the enter key.
 
 Sit back and watch the script download Blender 2.79 and download DiscoIPC! The script will ask you for your client ID, so input/paste it into the terminal when it says so.
 
