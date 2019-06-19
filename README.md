@@ -2,8 +2,6 @@
 
 ![Logo](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/DiscordRPBlender.png)
 
-(Notice: I will not be working much on this project until July.)
-
 Discord rich presence for Blender. Tested in Blender **2.79**
 
 (Big thanks to eKross for testing DiscordRPBlender on Windows!)
