@@ -4,14 +4,15 @@
 
 #### Table of contents
    * [Images](#images)
-   * [Installation - Blender 2.8 already installed](#installation---blender-28-already-installed)
-      * [Linux](#linux)
-      * [Windows](#windows)
-      * [Mac](#mac---incomplete)
-   * [Installation - Blender 2.79 installed](#installation---blender-279-installed)
-   * [Dependency](#dependency)
-   * [Creating a Discord Application](#creating-a-discord-application)
-   * [Setting up discordrpblender.py](#setting-up-discordrpblenderpy)
+   * [Installation](#installation)
+      * [Installation - Blender 2.8 already installed](#installation---blender-28-already-installed)
+         * [Linux](#linux)
+         * [Windows](#windows)
+         * [Mac](#mac---incomplete)
+      * [Installation - Blender 2.79 installed](#installation---blender-279-installed)
+      * [Dependency](#dependency)
+      * [Creating a Discord Application](#creating-a-discord-application)
+      * [Setting up discordrpblender.py](#setting-up-discordrpblenderpy)
    * [Running](#running)
       * [Linux](#linux)
       * [Windows](#windows-1)
@@ -52,7 +53,16 @@ This is what DiscordRPBlender looks like on Discord.
 
 ![Img3](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgRendering.png)
 
-## Installation - Blender 2.8 already installed
+
+## Installation
+
+First you need to create a Discord Application
+
+### Creating a Discord Application
+
+See [Creating a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
+
+### Installation - Blender 2.8 already installed
 That's fine! We can download 2.79 without removing Blender 2.8!
 
 First we need to get the Discord App, which is available for Linux, Windows, Mac and other devices!
@@ -64,9 +74,7 @@ First we need to get the Discord App, which is available for Linux, Windows, Mac
 ##### Linux
 Launch a terminal then copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux)` into the terminal and hit the enter key.
 
-Sit back and watch the script download Blender 2.79 and download DiscoIPC! The script will ask you for your client ID, so input/paste it into the terminal when it says so.
-
-Now, create a Discord application using the guide in the chapter "Creating a Discord Application" below.
+Sit back and watch the script download Blender 2.79 and download DiscoIPC! The script will ask you for your client ID from your Discord Application, so input/paste it into the terminal when it says so.
 
 And that's it! Blender 2.79 will be in `/tmp/blender-2.79b-linux...`. You can now move the Blender installation to anywhere you like! Now we can run the script with Blender. Jump to the "Running" chapter below.
 
@@ -83,7 +91,7 @@ If it is 64bit, download: [Blender2.79-Windows64.zip](http://www.mediafire.com/f
 
 2. Extract to any directory you prefer.
 
-Now we need to create a Discord application using the guide in the chapter "Creating a Discord Application" then we can set up `discordrpblender.py` (see chapter "Setting up discordrpblender.py" below) and then we can run it! (see chapter "Running" below)
+Now continue onto the [Setting Up](#setting-up-discordrpblenderpy) chapter
 
 ##### Mac - Incomplete
 (Note: Need a better way than the current way of installation. Script file similar to the Linux script above)
@@ -92,16 +100,12 @@ Make sure you have Pip3 and Python 3.5 or a newer version installed.
 
 2. Download Blender 2.79.
 
-Now we need to create a Discord application using the guide in the chapter "Creating a Discord Application" then we can set up `discordrpblender.py` (see chapter "Setting up discordrpblender.py" below) and then we can run it! (see chapter "Running" below)
+Now continue onto the [Setting Up](#setting-up-discordrpblenderpy) chapter
 
-## Installation - Blender 2.79 installed
+### Installation - Blender 2.79 installed
 TODO
 
-## Creating a Discord Application
-
-See [Creating a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
-
-## Setting up discordrpblender.py
+### Setting up discordrpblender.py
 
 Download discordrpblender.py from this repository.
 
@@ -109,7 +113,7 @@ Open discordrpblender.py and paste the client ID on **line 21** (replacing the t
 
 **And that's it! Now you may place the script wherever you like. Onto running it in Blender!**
 
-## Running
+### Running
 ##### Linux
 Open a terminal.
 
@@ -139,10 +143,10 @@ If you need more information visit the manual:
 
 [Blender Manual - Command Line](https://docs.blender.org/manual/en/latest/render/workflows/command_line.html)
 
-## Credits
+### Credits
 
 Credit to [k3rn31p4nic](https://github.com/k3rn31p4nic/) for the [discoIPC](https://github.com/k3rn31p4nic/discoIPC) module for Python.
 
-## License
+### License
 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
