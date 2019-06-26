@@ -2,6 +2,23 @@
 
 ![Logo](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/DiscordRPBlender.png)
 
+#### Table of contents
+   * [Images](#images)
+   * [Installation - Blender 2.8 already installed](#installation---blender-28-already-installed)
+      * [Linux](#linux)
+      * [Windows](#windows)
+      * [Mac](#mac---incomplete)
+   * [Installation - Blender 2.79 installed](#installation---blender-279-installed)
+   * [Dependency](#dependency)
+   * [Creating a Discord Application](#creating-a-discord-application)
+   * [Setting up discordrpblender.py](#setting-up-discordrpblenderpy)
+   * [Running](#running)
+      * [Linux](#linux)
+      * [Windows](#windows-1)
+      * [Mac](#mac)
+   * [Credits](#credits)
+   * [License](#license)
+
 Discord rich presence for Blender. Tested in Blender **2.79**
 
 (Big thanks to eKross for testing DiscordRPBlender on Windows!)
@@ -118,15 +135,15 @@ Otherwise go to the directory where Blender is installed then run Blender:
 If the file is in the Blender installation directory, you can run:
 `blender -P discordrpblender.py`
 
-##### Mac
-Open the terminal application, go to the directory where Blender is installed, and run the executable within the app bundle, with commands like this:
-1. `cd /Applications/Blender`
-2. `./blender.app/Contents/MacOS/blender -P PATH_TO_SCRIPT/discordrpblender.py`
-
 ##### Windows
 Open the Command Prompt, go to the directory where Blender is installed, and then run Blender:
 1. `cd c:\blender_installation_directory`
 2. `blender -P PATH_TO_SCRIPT/discordrpblender.py`
+
+##### Mac
+Open the terminal application, go to the directory where Blender is installed, and run the executable within the app bundle, with commands like this:
+1. `cd /Applications/Blender`
+2. `./blender.app/Contents/MacOS/blender -P PATH_TO_SCRIPT/discordrpblender.py`
 
 **And that's it! You'll need to run this command every time you want Discord rich presence for Blender.**
 
