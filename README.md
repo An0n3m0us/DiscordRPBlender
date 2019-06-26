@@ -22,7 +22,6 @@ DiscordRPBlender needs:
 - Idle status on Windows & Mac:
   - https://stackoverflow.com/a/36419702
 - Installation package that allows input of client ID
-- Add jitsi screenshare room link?
 
 ## Images
 
