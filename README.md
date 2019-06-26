@@ -23,6 +23,8 @@ Discord rich presence for Blender. Tested in Blender **2.79**
 
 (Big thanks to eKross for testing DiscordRPBlender on Windows!)
 
+[Changelog](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Changelog)
+
 DiscordRPBlender supports:
 - Filename
 - Amount of objects / Idle status / Render status (No idle status for Windows and Mac yet)
@@ -97,21 +99,7 @@ TODO
 
 ## Creating a Discord Application
 
-Now to set up a Discord application to receive Blender rich presence.
-
-1. Visit https://discordapp.com/developers/applications/
-
-2. Create an application called Blender.
-
-3. Click **Rich Presence** on the side bar and then scroll down.
-
-4. Download the Blender logo from the "Images" folder in this repository
-
-5. Go back to the Discord application.
-
-6. Click **Add Image(s)** then upload the image you just downloaded.
-
-7. Go back to the "General Information" tab and click the Copy button under "Client ID".
+See [Creating a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
 
 ## Setting up discordrpblender.py
 
