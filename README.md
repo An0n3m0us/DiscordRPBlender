@@ -3,16 +3,13 @@
 ![Logo](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/DiscordRPBlender.png)
 
 #### Table of contents
-   * [Images](#images)
    * [Installation](#installation)
       * [Installation - Blender 2.8 already installed](#installation---blender-28-already-installed)
          * [Linux](#linux)
          * [Windows](#windows)
          * [Mac](#mac---incomplete)
       * [Installation - Blender 2.79 installed](#installation---blender-279-installed)
-      * [Dependency](#dependency)
-      * [Creating a Discord Application](#creating-a-discord-application)
-      * [Setting up discordrpblender.py](#setting-up-discordrpblenderpy)
+      * [Setting up](#setting-up)
    * [Running](#running)
       * [Linux](#linux)
       * [Windows](#windows-1)
@@ -20,63 +17,45 @@
    * [Credits](#credits)
    * [License](#license)
 
-Discord rich presence for Blender. Tested in Blender **2.79**
+Discord Rich Presence for Blender. Tested in Blender **2.79**
 
-(Big thanks to eKross for testing DiscordRPBlender on Windows!)
+[Images](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Images)
 
-[Changelog](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Changelog)
-
-DiscordRPBlender supports:
+DiscordRPBlender currently supports:
 - Filename
 - Amount of objects / Idle status / Render status (No idle status for Windows and Mac yet)
 - Render time
 - Time spent on project (not all-time just session time)
 - Changing files without turning server off
 
-DiscordRPBlender needs:
-- Instantly stop sending to Discord after Blender turns off (keeps sending for a few seconds)
-- Remove stats after quitting (Discord keeps showing weird stats for a few seconds after)
-- Blender addon?
-- Something in Blender to show the user that DiscordRPBlender is running
-- Toolbar button to toggle on/off
-- Idle status on Windows & Mac:
-  - https://stackoverflow.com/a/36419702
-- Installation package that allows input of client ID
-
-## Images
-
-This is what DiscordRPBlender looks like on Discord.
-
-![Img1](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgIdle.png)
-
-![Img2](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgWorking.png)
-
-![Img3](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgRendering.png)
+[Changelog](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Changelog)
 
 
 ## Installation
 
-First you need to create a Discord Application
+DiscordRPBlender currently works in Blender 2.79 only.
 
-### Creating a Discord Application
+First, get the Discord App which is available for Linux, Windows, Mac and other devices.
 
-See [Creating a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
+1. Download the Discord App and log in.
+
+2. Enable Game Activity status on Discord.
+
+Next, [set up a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
 
 ### Installation - Blender 2.8 already installed
 That's fine! We can download 2.79 without removing Blender 2.8!
-
-First we need to get the Discord App, which is available for Linux, Windows, Mac and other devices!
-
-1. Download the Discord app and log in.
-
-2. Enable Game Activity status on Discord.
 
 ##### Linux
 Launch a terminal then copy `source <(curl -s https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/blender-linux)` into the terminal and hit the enter key.
 
 Sit back and watch the script download Blender 2.79 and download DiscoIPC! The script will ask you for your client ID from your Discord Application, so input/paste it into the terminal when it says so.
 
-And that's it! Blender 2.79 will be in `/tmp/blender-2.79b-linux...`. You can now move the Blender installation to anywhere you like! Now we can run the script with Blender. Jump to the "Running" chapter below.
+And that's it! Blender 2.79 will be in `/tmp/blender-2.79b-linux...`. You can now move the Blender installation to anywhere you like! Now we can run the script with Blender.
+
+Now go to the [Running](#running) chapter.
+
+&nbsp;
 
 ##### Windows
 (Note: Need a better way than the current way of installation. Maybe a .bat script similar to the Linux script above)
@@ -91,7 +70,9 @@ If it is 64bit, download: [Blender2.79-Windows64.zip](http://www.mediafire.com/f
 
 2. Extract to any directory you prefer.
 
-Now continue onto the [Setting Up](#setting-up-discordrpblenderpy) chapter
+Now continue onto the [Setting Up](#setting-up) chapter.
+
+&nbsp;
 
 ##### Mac - Incomplete
 (Note: Need a better way than the current way of installation. Script file similar to the Linux script above)
@@ -100,20 +81,22 @@ Make sure you have Pip3 and Python 3.5 or a newer version installed.
 
 2. Download Blender 2.79.
 
-Now continue onto the [Setting Up](#setting-up-discordrpblenderpy) chapter
+Now continue onto the [Setting Up](#setting-up) chapter.
+
+&nbsp;
 
 ### Installation - Blender 2.79 installed
 TODO
 
-### Setting up discordrpblender.py
+### Setting up
 
 Download discordrpblender.py from this repository.
 
-Open discordrpblender.py and paste the client ID on **line 21** (replacing the template ID).
+Open discordrpblender.py and paste your Discord Applications client ID on **line 21** (replacing the template ID).
 
 **And that's it! Now you may place the script wherever you like. Onto running it in Blender!**
 
-### Running
+## Running
 ##### Linux
 Open a terminal.
 
@@ -137,16 +120,18 @@ Open the terminal application, go to the directory where Blender is installed, a
 1. `cd /Applications/Blender`
 2. `./blender.app/Contents/MacOS/blender -P PATH_TO_SCRIPT/discordrpblender.py`
 
-**And that's it! You'll need to run this command every time you want Discord rich presence for Blender.**
+**And that's it! You'll need to run this command every time you want Discord Rich Presence for Blender.**
 
 If you need more information visit the manual:
 
 [Blender Manual - Command Line](https://docs.blender.org/manual/en/latest/render/workflows/command_line.html)
 
-### Credits
+## Credits
 
 Credit to [k3rn31p4nic](https://github.com/k3rn31p4nic/) for the [discoIPC](https://github.com/k3rn31p4nic/discoIPC) module for Python.
 
-### License
+Big thanks to eKross for testing DiscordRPBlender on Windows!
+
+## License
 [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
