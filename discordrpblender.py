@@ -73,6 +73,7 @@ def set_activity():
     global rendering
     global rendertime
     global objcount
+
     #Loop these variables
     objcount = len(bpy.data.objects)
     if not os.system('xdotool getwindowfocus getwindowpid | grep -q "\<{}\>"'.format(pid)):
@@ -89,18 +90,41 @@ def set_activity():
     #Set activity for the player
     activity = base_activity
     if filename == '':
-        activity['details'] = 'Untitled'
+        if bpy.context.selected_objects and rendering == 0:
+            if bpy.context.object.type == "ARMATURE":
+                if bpy.context.active_pose_bone:
+                    activity['details'] = bpy.context.object.name + " - " + bpy.context.active_bone.name
+                else:
+                    activity['details'] = bpy.context.object.name
+            else:
+                activity['details'] = bpy.context.object.name
+        else:
+            activity['details'] = 'Untitled'
     else:
-        activity['details'] = filename
+        if bpy.context.selected_objects and rendering == 0:
+            if bpy.context.object.type == "ARMATURE":
+                if bpy.context.active_pose_bone:
+                    activity['details'] = bpy.context.object.name + " - " + bpy.context.active_bone.name
+                else:
+                    activity['details'] = bpy.context.object.name
+            else:
+                activity['details'] = bpy.context.object.name
+        else:
+            activity['details'] = "Untitled" # filename
     if active == 0:
-        activity['state'] = '(' + str(objcount) + ' objects)'
+        if not bpy.context.selected_objects:
+            activity['state'] = '(' + str(objcount) + ' objects)'
+        else:
+            activity['state'] = bpy.context.object.type[:1] + bpy.context.object.type[1:].lower()
     elif active == 1:
         activity['state'] = 'Idle'
     elif active == 2:
         activity['state'] = 'Rendering for ' + '0' + str(datetime.timedelta(seconds=((int(time.time() - rendertime))))) # Hacky
     activity['timestamps']['start'] = timeElapsed
+
     return activity
 
+timerfile = 0
 class ModalTimerOperator(bpy.types.Operator):
     """Operator which runs its self from a timer"""
     bl_idname = "wm.modal_timer_operator"
@@ -112,10 +136,11 @@ class ModalTimerOperator(bpy.types.Operator):
     def modal(self, context, event):
         if event.type == 'TIMER':
             global filename
-            global timeElapsed
-            global objcount
+            global timerfile
             filename = bpy.path.basename(bpy.context.blend_data.filepath)[:-6]
-            main()
+            if time.time() - timerfile > 0.05:
+                timerfile = time.time()
+                main()
 
         return {'PASS_THROUGH'}
 
