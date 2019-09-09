@@ -10,14 +10,13 @@ cd "/tmp/blender-2.79b-linux-glibc219-$arch/" && wget "https://raw.githubusercon
 mv discordrpblender.py discordrpblender.txt && ls
 
 echo
-echo "Please input your client ID"
+echo "Please input your client ID (18 digits)"
 read client_ID
 
 while [ $(echo ${#client_ID}) -ne 18 ]
 do
-    echo "Client ID is must be 18 characters"
+    echo "Client ID is must be 18 digits"
     read client_ID
 done
 sed -e "s/\${clientID}/$client_ID/" discordrpblender.txt > discordrpblender.py
 rm discordrpblender.txt
-rm ../blender-linux

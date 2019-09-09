@@ -99,7 +99,7 @@ def set_activity():
             else:
                 activity['details'] = bpy.context.object.name
         else:
-            activity['details'] = 'Untitled'
+            activity['details'] = '(Untitled)'
     else:
         if bpy.context.selected_objects and rendering == 0:
             if bpy.context.object.type == "ARMATURE":
@@ -110,13 +110,14 @@ def set_activity():
             else:
                 activity['details'] = bpy.context.object.name
         else:
-            activity['details'] = "Untitled" # filename
+            activity['details'] = "(Untitled)" # filename
     if active == 0:
         if not bpy.context.selected_objects:
             activity['state'] = '(' + str(objcount) + ' objects)'
         else:
             activity['state'] = bpy.context.object.type[:1] + bpy.context.object.type[1:].lower()
     elif active == 1:
+        activity['details'] = "(Untitled)" # filename
         activity['state'] = 'Idle'
     elif active == 2:
         activity['state'] = 'Rendering for ' + '0' + str(datetime.timedelta(seconds=((int(time.time() - rendertime))))) # Hacky
