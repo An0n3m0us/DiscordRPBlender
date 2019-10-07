@@ -17,15 +17,17 @@ DiscordRPBlender currently supports:
 
 First, download the Discord App which is available for Linux, Windows, Mac and other devices.
 
-1. Download the Discord App and enable Game Activity status in the settings.
+1. Enable Game Activity status in the settings.
+
+2. Download `discordrpblender.py` from this repository and place it wherever you like.
 
 Next, [set up a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
 
-2. On line **22** in the script file, place your clientID (from your Discord Application) in between the apostrophes.
+3. On line **22** in the `discordrpblender.py` file, replace the 18 digit number with your clientID (from your Discord Application).
 
-3. Install [discoIPC](https://github.com/k3rn31p4nic/discoIPC)
+4. Install [discoIPC](https://github.com/k3rn31p4nic/discoIPC)
 
-4. Run Blender in the cmd/terminal like so: `blender -P PATHTOSCRIPT.py` (example: `blender -P /tmp/discordrpblender.py`)
+5. Run Blender in the cmd/terminal like so: `blender -P PATHTOSCRIPT.py` (example: `blender -P /tmp/discordrpblender.py`)
 
 ### Credits
 

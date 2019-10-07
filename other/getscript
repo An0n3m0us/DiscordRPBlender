@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cd /tmp/ && wget "https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/discordrpblender.py"
+mv discordrpblender.py discordrpblender.txt && ls
+
+echo
+echo "Please input your client ID (18 digits)"
+read client_ID
+
+while [ $(echo ${#client_ID}) -ne 18 ]
+do
+    echo "Client ID is must be 18 digits"
+    read client_ID
+done
+sed -e "s/\${clientID}/$client_ID/" discordrpblender.txt > discordrpblender.py
+rm discordrpblender.txt
