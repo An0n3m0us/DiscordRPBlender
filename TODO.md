@@ -1,8 +1,5 @@
-- Instantly stop sending to Discord after Blender turns off (keeps sending for a few seconds)
-- Remove stats after quitting (Discord keeps showing weird stats for a few seconds after)
 - Blender addon?
 - Something in Blender to show the user that DiscordRPBlender is running
 - Toolbar button to toggle on/off
 - Idle status on Windows & Mac:
   - https://stackoverflow.com/a/36419702
-- Installation package that allows input of client ID

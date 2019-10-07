@@ -2,7 +2,7 @@
 
 ![Logo](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/DiscordRPBlender.png)
 
-Discord Rich Presence for Blender 2.7+ and 2.8 (tested on 2.79 and 2.8 (render information in Cycles engine only))
+Discord Rich Presence for Blender 2.7+ and 2.8 (tested on 2.79 and 2.8 (render information in Internal and Cycles engine only))
 
 DiscordRPBlender currently supports:
 - Filename
@@ -15,6 +15,8 @@ DiscordRPBlender currently supports:
 
 ### Installation
 
+[Images](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Images)
+
 First, download the Discord App which is available for Linux, Windows, Mac and other devices.
 
 1. Enable Game Activity status in the settings.
@@ -24,6 +26,8 @@ First, download the Discord App which is available for Linux, Windows, Mac and o
 Next, [set up a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
 
 3. On line **22** in the `discordrpblender.py` file, replace the 18 digit number with your clientID (from your Discord Application).
+
+	3.1 Settings are on line **6**. Set them to either `True` or `False`.
 
 4. Install [discoIPC](https://github.com/k3rn31p4nic/discoIPC)
 

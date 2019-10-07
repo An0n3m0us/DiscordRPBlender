@@ -3,6 +3,10 @@ from bpy.app.handlers import persistent
 import time, datetime, os, atexit
 from discoIPC import ipc
 
+# Settings
+showFilename = True;
+showTimeElapsed = True;
+
 base_activity = {
     'assets': {
         'large_image': 'blender',
@@ -19,7 +23,7 @@ active = 0
 rendering = 0
 rendertime = 0
 
-client = ipc.DiscordIPC('000000000000000000')
+client = ipc.DiscordIPC('000000000000000000') # Replace your clientId with the 18 digit template
 client.connect()
 print('\nStarting Discord ICP ...\n')
 
@@ -110,7 +114,9 @@ def set_activity():
         activity['state'] = 'Idle'
     elif active == 2:
         activity['state'] = 'Rendering for ' + '0' + str(datetime.timedelta(seconds=((int(time.time() - rendertime))))) # Hacky
-    activity['timestamps']['start'] = timeElapsed
+
+    if showTimeElapsed == True:
+        activity['timestamps']['start'] = timeElapsed
 
     return activity
 
@@ -127,7 +133,9 @@ class ModalTimerOperator(bpy.types.Operator):
         if event.type == 'TIMER':
             global filename
             global timerfile
-            filename = bpy.path.basename(bpy.context.blend_data.filepath)[:-6]
+            if showFilename == True:
+                filename = bpy.path.basename(bpy.context.blend_data.filepath)[:-6]
+			
             if time.time() - timerfile > 0.05:
                 timerfile = time.time()
                 main()
