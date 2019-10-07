@@ -2,7 +2,7 @@
 
 ![Logo](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/DiscordRPBlender.png)
 
-Discord Rich Presence for Blender 2.7+ and 2.8 (tested on 2.79 and 2.8)
+Discord Rich Presence for Blender 2.7+ and 2.8 (tested on 2.79 and 2.8 (render information in Cycles engine only))
 
 DiscordRPBlender currently supports:
 - Filename
@@ -13,7 +13,7 @@ DiscordRPBlender currently supports:
 
 [Changelog](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Changelog)
 
-## Installation
+### Installation
 
 First, download the Discord App which is available for Linux, Windows, Mac and other devices.
 
@@ -26,6 +26,8 @@ Next, [set up a Discord Application](https://github.com/An0n3m0us/DiscordRPBlend
 3. On line **22** in the `discordrpblender.py` file, replace the 18 digit number with your clientID (from your Discord Application).
 
 4. Install [discoIPC](https://github.com/k3rn31p4nic/discoIPC)
+
+	4.1 If you haven't got `pip` or `python`, then you can install it manually. Download [discoIPC.zip](https://github.com/An0n3m0us/DiscordRPBlender/raw/master/other/discoIPC.zip) then follow [this](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/other/discoIPC-manual-installation.mp4) video guide.
 
 5. Run Blender in the cmd/terminal like so: `blender -P PATHTOSCRIPT.py` (example: `blender -P /tmp/discordrpblender.py`)
 
