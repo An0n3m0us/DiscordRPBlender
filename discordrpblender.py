@@ -1,7 +1,9 @@
-import bpy
+import bpy, subprocess
 from bpy.app.handlers import persistent
 import time, datetime, os, atexit
 from discoIPC import ipc
+
+from sys import platform
 
 # Settings
 showFilename = True;
@@ -23,7 +25,7 @@ active = 0
 rendering = 0
 rendertime = 0
 
-client = ipc.DiscordIPC('000000000000000000') # Replace your clientId with the 18 digit template
+client = ipc.DiscordIPC('000000000000000000') # Replace your clientID with the 18 digit template
 client.connect()
 print('\nStarting Discord ICP ...\n')
 
@@ -80,16 +82,25 @@ def set_activity():
 
     #Loop these variables
     objcount = len(bpy.data.objects)
-    if not os.system('xdotool getwindowfocus getwindowpid | grep -q "\<{}\>"'.format(pid)):
-        if rendering == 1:
-            active = 2
-        else:
-            active = 0
+    if platform == "linux" or platform == "linux2":
+        if not subprocess.getstatusoutput('xdotool')[0] == 0:
+            pidcheck = subprocess.getstatusoutput('xdotool getwindowfocus getwindowpid')[1]
+
+            if not str(pidcheck) != str(pid):
+                if rendering == 1:
+                    active = 2
+                else:
+                    active = 0
+            else:
+                if rendering == 1:
+                    active = 2
+                else:
+                    active = 1
     else:
         if rendering == 1:
             active = 2
         else:
-            active = 1
+            active = 0
 
     #Set activity for the player
     activity = base_activity
