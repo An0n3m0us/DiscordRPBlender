@@ -2,16 +2,19 @@
 
 ![Logo](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/DiscordRPBlender.png)
 
-Discord Rich Presence for Blender 2.7+ and 2.8 (tested on 2.79 and 2.8 (render information in Internal and Cycles engine only))
+Discord Rich Presence for Blender (tested on 2.79 and 2.83.8 (render information in Internal and Cycles engine only))
 
-[Images](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Images)
+![Img1](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgDefault.png)
+![Img2](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgEditing.png)
+![Img3](https://raw.githubusercontent.com/An0n3m0us/DiscordRPBlender/master/images/ImgRendering.png)
 
 DiscordRPBlender currently supports:
-- Filename
-- Amount of objects / Idle status / Render status (No idle status for Windows and Mac yet)
-- Render time
-- Time spent on project (not all-time just session time)
+- Displaying filename (can be toggled)
+- Scene & Object information / \*Idle status (Linux only) / Render status & time
+- Time elapsed (can be toggled)
 - Changing files without turning client off
+
+\* Removed temporarily
 
 [Changelog](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Changelog)
 

@@ -12,13 +12,14 @@ showTimeElapsed = True;
 base_activity = {
     'assets': {
         'large_image': 'blender',
-        'large_text': 'Blender',
+        'large_text': 'Blender ' + bpy.app.version_string.split(" ")[0],
+        'small_image': 'default_file',
+        'small_text': '(Untitled)'
     },
     'timestamps': {},
 }
 
 pid = os.getpid()
-filename = ''
 objcount = 0
 timeElapsed = int(time.time())
 active = 0
@@ -42,8 +43,6 @@ def main():
 @persistent
 def resetTime(scene):
     bpy.ops.wm.modal_timer_operator()
-    global timeElapsed
-    timeElapsed = int(time.time())
 
 @persistent
 def render_begin(scene):
@@ -80,8 +79,6 @@ def set_activity():
     global rendertime
     global objcount
 
-    #Loop these variables
-    objcount = len(bpy.data.objects)
     if platform == "linux" or platform == "linux2":
         if not subprocess.getstatusoutput('xdotool')[0] == 0:
             pidcheck = subprocess.getstatusoutput('xdotool getwindowfocus getwindowpid')[1]
@@ -95,7 +92,7 @@ def set_activity():
                 if rendering == 1:
                     active = 2
                 else:
-                    active = 1
+                    active = 0
     else:
         if rendering == 1:
             active = 2
@@ -104,27 +101,42 @@ def set_activity():
 
     #Set activity for the player
     activity = base_activity
-    if bpy.context.selected_objects and rendering == 0:
-        if bpy.context.object.type == "ARMATURE":
-            if bpy.context.active_pose_bone:
-                activity['details'] = bpy.context.object.name + " - " + bpy.context.active_bone.name
-            else:
-                activity['details'] = bpy.context.object.name
+    if showFilename == True:
+        if bpy.path.basename(bpy.context.blend_data.filepath)[:-6]:
+            activity['assets']['small_text'] = bpy.path.basename(bpy.context.blend_data.filepath)[:-6]
         else:
-            activity['details'] = bpy.context.object.name
-    else:
-        activity['details'] = filename or "(Untitled)"
+            activity['assets']['small_text'] = "(Untitled)"
 
     if active == 0:
-        if not bpy.context.selected_objects:
-            activity['state'] = '(' + str(objcount) + ' objects)'
-        else:
-            activity['state'] = bpy.context.object.type[:1] + bpy.context.object.type[1:].lower()
+        string = bpy.context.mode.split("_")
+        string1 = string[0].lower().capitalize()
+
+        if len(string) > 1:
+            string1 = string1 + " " + string[1].lower().capitalize()
+
+        activity['details'] = string1 + " Mode"
     elif active == 1:
-        activity['details'] = filename or "(Untitled)"
-        activity['state'] = 'Idle'
+        activity['details'] = 'Idle'
     elif active == 2:
-        activity['state'] = 'Rendering for ' + '0' + str(datetime.timedelta(seconds=((int(time.time() - rendertime))))) # Hacky
+        activity['details'] = 'Rendering for ' + '0' + str(datetime.timedelta(seconds=((int(time.time() - rendertime))))) # Hacky
+
+    if bpy.context.mode == "OBJECT" and active != 2:
+        count = len(bpy.data.objects)
+        activity['state'] = '(' + str(count) + ' ' + ("object" if count == 1 else "objects") + ')'
+    else:
+        if active != 2:
+            ob = bpy.context.object
+            ob.update_from_editmode()
+
+            if ob.type == "MESH":
+                count = len(bpy.context.object.data.vertices)
+                activity['state'] = '(' + str(count) + ' ' + ("vertex" if count == 1 else "vertices") + ')'
+            elif ob.type == "ARMATURE":
+                count = len(bpy.context.object.data.bones)
+                activity['state'] = '(' + str(count) + ' ' + ("bone" if count == 1 else "bones") + ')'
+                
+        else:
+            activity['state'] = "Frame " + str(bpy.context.scene.frame_current) + " / " + str(bpy.context.scene.frame_end - bpy.context.scene.frame_start)
 
     if showTimeElapsed == True:
         activity['timestamps']['start'] = timeElapsed
@@ -144,8 +156,6 @@ class ModalTimerOperator(bpy.types.Operator):
         if event.type == 'TIMER':
             global filename
             global timerfile
-            if showFilename == True:
-                filename = bpy.path.basename(bpy.context.blend_data.filepath)[:-6]
 			
             if time.time() - timerfile > 0.05:
                 timerfile = time.time()
@@ -156,7 +166,7 @@ class ModalTimerOperator(bpy.types.Operator):
     @persistent
     def execute(self, context):
         wm = context.window_manager
-        self._timer = wm.event_timer_add(0.1, window=context.window)
+        self._timer = wm.event_timer_add(2, window=context.window)
         wm.modal_handler_add(self)
         return {'RUNNING_MODAL'}
 
