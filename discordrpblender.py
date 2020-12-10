@@ -122,7 +122,7 @@ def set_activity():
 
     if bpy.context.mode == "OBJECT" and active != 2:
         count = len(bpy.data.objects)
-        activity['state'] = '(' + str(count) + ' ' + ("object" if count == 1 else "objects") + ')'
+        activity['state'] = '(' + str(len(bpy.context.selected_objects)) + '/' + str(count) + ' ' + ("object" if count == 1 else "objects") + ' selected)'
     else:
         if active != 2:
             ob = bpy.context.object
@@ -130,13 +130,15 @@ def set_activity():
 
             if ob.type == "MESH":
                 count = len(bpy.context.object.data.vertices)
-                activity['state'] = '(' + str(count) + ' ' + ("vertex" if count == 1 else "vertices") + ')'
+                selected = len([v.index for v in bpy.context.object.data.vertices if v.select])
+                activity['state'] = '(' + str(selected) + '/' + str(count) + ' ' + ("vertex" if count == 1 else "vertices") + ' selected)'
             elif ob.type == "ARMATURE":
                 count = len(bpy.context.object.data.bones)
-                activity['state'] = '(' + str(count) + ' ' + ("bone" if count == 1 else "bones") + ')'
+                selected = len([b.name for b in bpy.context.object.data.bones if b.select])
+                activity['state'] = '(' + str(selected) + '/' + str(count) + ' ' + ("bone" if count == 1 else "bones") + ')'
                 
         else:
-            activity['state'] = "Frame " + str(bpy.context.scene.frame_current) + " / " + str(bpy.context.scene.frame_end - bpy.context.scene.frame_start)
+            activity['state'] = "Frame " + str(bpy.context.scene.frame_current) + "/" + str(bpy.context.scene.frame_end - bpy.context.scene.frame_start)
 
     if showTimeElapsed == True:
         activity['timestamps']['start'] = timeElapsed
