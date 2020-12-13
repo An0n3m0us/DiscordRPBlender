@@ -32,9 +32,9 @@ Next, install [discoIPC](https://github.com/k3rn31p4nic/discoIPC).
 
 Lastly, [set up a Discord Application](https://github.com/An0n3m0us/DiscordRPBlender/wiki/Creating-a-Discord-Application)
 
-4. On line **22** in the `discordrpblender.py` file, replace the 18 digit number with your clientID (from your Discord Application).
+4. On line **29** in the `discordrpblender.py` file, replace the 18 digit number with your clientID (from your Discord Application).
 
-	4.1 Settings are on line **6**. Set them to either `True` or `False`.
+	4.1 Settings are on line **8**. Set them to either `True` or `False`.
 
 5. Run Blender in the cmd/terminal like so: `blender -P PATHTOSCRIPT.py` (example: `blender -P /tmp/discordrpblender.py`)
 
